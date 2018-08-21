@@ -13,8 +13,14 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/store', (req, res) => {
-    res.send('Sweet');
+app.get('/', (req, res) => {
+    res.send({
+      apple: 3,
+      orange: "2",
+      fruit: {
+        grape: 4
+      }
+    });
 });
 
 app.listen(app.get('port'), () => {
